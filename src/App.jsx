@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import GachaButton from './components/GachaButton';
 import ResultDisplay from './components/ResultDisplay';
+import './App.css';
 
 function App() {
   const [result, setResult] = useState(null);
@@ -20,8 +21,8 @@ function App() {
   return (
     <div>
       <h1>ガチャ</h1>
-      <GachaButton onClick={handleGacha} />
-      <ResultDisplay result={result} />
+      <GachaButton onClick={handleGacha} className="gacha-button" />
+      <ResultDisplay result={result} className="result-display" />
     </div>
   );
 }
