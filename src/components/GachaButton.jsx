@@ -1,8 +1,8 @@
 import React from 'react';
 
-const GachaButton = ({ onClick }) => {
+const GachaButton = ({ onClick, className }) => {
   return (
-    <button onClick={onClick}>
+    <button onClick={onClick} className={className}>
       ガチャを引く
     </button>
   );

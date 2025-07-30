@@ -1,0 +1,57 @@
+.gacha-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.gacha-button:hover {
+  background-color: #0056b3;
+}
+
+.result-display {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.rank-s {
+  font-weight: bold;
+  background: linear-gradient(45deg, #f3ec78, #af4261, #f3ec78, #af4261);
+  background-size: 200% 200%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: rainbow 2s ease-in-out infinite;
+}
+
+.rank-a {
+  color: #e74c3c; /* 赤色 */
+}
+
+.rank-b {
+  color: #3498db; /* 青色 */
+}
+
+.rank-c {
+  color: #34495e; /* 濃い灰色 */
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
