@@ -1,9 +1,20 @@
 import React from 'react';
 
-const ResultDisplay = ({ result }) => {
+const ResultDisplay = ({ result, className }) => {
+  const getRankClass = (rank) => {
+    if (!rank) return '';
+    return `rank-${rank.toLowerCase()}`;
+  };
+
   return (
-    <div>
-      {result && <p>結果: {result}</p>}
+    <div className={className}>
+      {result ? (
+        <p>
+          結果: <span className={getRankClass(result)}>{result}</span>
+        </p>
+      ) : (
+        '結果はここに表示されます'
+      )}
     </div>
   );
 };
