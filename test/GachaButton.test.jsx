@@ -1,21 +1,19 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { test, expect, vi } from 'vitest';
+import { test, expect, vi, describe } from 'vitest';
 import GachaButton from '../src/components/GachaButton';
 
-test('GachaButton: 正しくレンダリングされ、クリックを処理する', () => {
-  // クリックイベントのモック関数を作成
-  const handleClick = vi.fn();
+describe('GachaButton', () => {
+  test('正しくレンダリングされる', () => {
+    render(<GachaButton />);
+    const buttonElement = screen.getByText('ガチャを引く');
+    expect(buttonElement).not.toBeNull();
+  });
 
-  // コンポーネントをレンダリング
-  render(<GachaButton onClick={handleClick} />);
-
-  // ボタンが正しく表示されているか確認
-  const buttonElement = screen.getByText('ガチャを引く');
-  expect(buttonElement).not.toBeNull();
-
-  // ボタンをクリック
-  fireEvent.click(buttonElement);
-
-  // onClickハンドラが1回呼び出されたか確認
-  expect(handleClick).toHaveBeenCalledTimes(1);
+  test('クリック時にonClickハンドラが呼び出される', () => {
+    const handleClick = vi.fn();
+    render(<GachaButton onClick={handleClick} />);
+    const buttonElement = screen.getByText('ガチャを引く');
+    fireEvent.click(buttonElement);
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
 });
