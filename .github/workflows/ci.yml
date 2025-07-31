@@ -15,4 +15,6 @@ jobs:
           node-version: '20.x'
       - run: npm ci
       - run: npm run lint
+      - name: Run tests
+        run: npm test
       - run: npm run build
